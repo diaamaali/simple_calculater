@@ -21,10 +21,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Spinner spinner = findViewById(R.id.spinner1);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.opperations, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
+
+
+        CalData cal=new CalData();
+        String [] types = cal.getCalOpSpinner();
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, types);
+        spinner.setAdapter(adapter); // set the adapter to the spinner in the xml file
+
+
         spinner.setOnItemSelectedListener(this);
         ImageView im = (ImageView) findViewById(R.id.imageView7);
         ImageView imm = (ImageView) findViewById(R.id.imageView8);

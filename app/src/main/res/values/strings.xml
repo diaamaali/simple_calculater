@@ -1,11 +1,5 @@
 <resources>
     <string name="app_name">Spinner Example</string>
 
-    <string-array name="opperations">
-        <item>+</item>
-        <item>-</item>
-        <item>*</item>
-        <item>/</item>
 
-    </string-array>
 </resources>
